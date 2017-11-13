@@ -3,10 +3,10 @@
 		fun logos -->
 	</footer>
 	<script>
-	    var yelpCampSite = "https://matt-cronan.herokuapp.com/";
-        var rgbSite = "https://www.espn.com/";
-        var recipeSite = "https://stackoverflow.com";
-        var paratapSite = "https://reddit.com/r/politics";
+	    var yelpCampSite = "https://matt-cronan.herokuapp.com/projects/yc";
+        var rgbSite = "https://matt-cronan.herokuapp.com/projects/ColorGame";
+        var recipeSite = "https://matt-cronan.herokuapp.com/projects/MountainTravel";
+        var mountianSite = "https://matt-cronan.herokuapp.com/projects/ParatapClone";
         var yelpCampDisp = "<p>Test</p><p>Test2</p>";
         var rgbDisp = "<p>RGB</p><p>Another RGB para</p>";
         // var canvas = document.getElementById("mycanvas");
@@ -15,22 +15,18 @@
         
         $("#yelpcampBtn").click(function(){
           $("#iframe").attr('src', yelpCampSite);
-        	$("#projectInfo").html(yelpCampDisp);
         });
         
         $("#rgbBtn").click(function(){
             $("#iframe").attr('src', rgbSite);
-            $("#projectInfo").html(rgbDisp);
         });
         
         $("#recipeBtn").click(function(){
-        	$("#iframe").attr('src', recipeSite);
-        	$("#projectInfo").html(yelpCampDisp);
+        	$("#iframe").attr('src', mountainSite);
         });
         
         $("#paratapBtn").click(function(){
         	$("#iframe").attr('src', paratapSite);
-        	$("#projectInfo").html(yelpCampDisp);
         });
         
         $("#trigger").click(function(){

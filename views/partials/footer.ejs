@@ -3,12 +3,14 @@
 		fun logos -->
 	</footer>
 	<script>
-	    var yelpCampSite = "https://matt-cronan.herokuapp.com/projects/yc";
+	      var yelpCampSite = "https://matt-cronan.herokuapp.com/projects/yc";
         var rgbSite = "https://matt-cronan.herokuapp.com/projects/ColorGame";
         var mountainSite = "https://matt-cronan.herokuapp.com/projects/MountainTravel";
-        var paratapSite = "https://matt-cronan.herokuapp.com/projects/ParatapClone";
-        var yelpCampDisp = "<p>Test</p><p>Test2</p>";
-        var rgbDisp = "<p>RGB</p><p>Another RGB para</p>";
+        var patatapSite = "https://matt-cronan.herokuapp.com/projects/PatatapClone";
+        var yelpCampDisp = "<p>YelpCamp is my final project for the Web Development Bootcamp ran by Colt Steele. It was built using Node and Express with MongoDB serving as the database. The logins for this site have been disabled and are for demonstration purposes only, however they are functional and use passport for authentication. Each campsite added by the user also takes in an address or zip code which uses Google Maps API to provide a map of the location.  Users can post new campgrounds as well as post comments about their camp experience.</p>";
+        var rgbDisp = "<p>This simple color game was built using HTML, CSS, and vanilla Javascript. The game displays an RGB code and the user chooses between 3 or 6 different colors (depending on the mode selected.)</p>";
+        var mountainDisp = "<p>This is a single page application designed for a startup company.  It uses a lot of CSS Flexbox for styling purposes.</p>"
+        var patatapDisp = "<p>This is a cool app emulated after Patatap.com site. It uses two JS libraries (paper.js for graphics and howler.js for sound). The alphabet keys are each mapped with a unique sound and an image will appear when one is pressed. </p>"
         // var canvas = document.getElementById("mycanvas");
         // var img    = canvas.toDataURL("image/png");
 
@@ -16,9 +18,11 @@
         $("#yelpcampBtn").click(function(){
           $("#iframe").attr({
             'src': yelpCampSite,
-            'height': 1000,
-            'width': 750 
+            'height': 750,
+            'width': 500 
           });
+          $("#projectBtnLink").attr('href', yelpCampSite);
+          $("#projectInfo").html(yelpCampDisp);
         });
         
         $("#rgbBtn").click(function(){
@@ -27,22 +31,28 @@
               'height': 700,
               'width': 750
             });
+            $("#projectBtnLink").attr('href', rgbSite);
+            $("#projectInfo").html(rgbDisp);
         });
         
         $("#mountainBtn").click(function(){
         	$("#iframe").attr({
         	  'src': mountainSite,
-        	  'height': 1000,
-        	  'width': 750
+        	  'height': 750,
+        	  'width': 500
         	});
+        	$("#projectBtnLink").attr('href', mountainSite);
+        	$("#projectInfo").html(mountainDisp);
         });
         
-        $("#paratapBtn").click(function(){
+        $("#patatapBtn").click(function(){
         	$("#iframe").attr({
-        	  'src': paratapSite,
+        	  'src': patatapSite,
         	  'height': 350,
         	  'width': 750
         	});
+        	$("#projectBtnLink").attr('href', patatapSite);
+        	$("#projectInfo").html(patatapDisp);
         });
         
         $("#trigger").click(function(){

@@ -12,8 +12,8 @@ router.get("/projects/ColorGame", function(req, res){
    res.render("colorGame"); 
 });
 
-router.get("/projects/ParatapClone", function(req, res){
-   res.render("paratapIndex"); 
+router.get("/projects/PatatapClone", function(req, res){
+   res.render("patatapIndex"); 
 });
 
 router.get("/projects/MountainTravel", function(req, res){

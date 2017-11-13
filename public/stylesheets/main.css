@@ -140,8 +140,6 @@ canvas {
 iframe {
 	display: block;
 	margin: 20px auto;
-	height: 1000px;
-	width: 750px;
 }
 
 section h2 {

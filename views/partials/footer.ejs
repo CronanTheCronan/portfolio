@@ -14,19 +14,35 @@
 
         
         $("#yelpcampBtn").click(function(){
-          $("#iframe").attr('src', yelpCampSite);
+          $("#iframe").attr({
+            'src': yelpCampSite,
+            'height': 1000,
+            'width': 750 
+          });
         });
         
         $("#rgbBtn").click(function(){
-            $("#iframe").attr('src', rgbSite);
+            $("#iframe").attr({
+              'src': rgbSite,
+              'height': 700,
+              'width': 750
+            });
         });
         
         $("#mountainBtn").click(function(){
-        	$("#iframe").attr('src', mountainSite);
+        	$("#iframe").attr({
+        	  'src': mountainSite,
+        	  'height': 1000,
+        	  'width': 750
+        	});
         });
         
         $("#paratapBtn").click(function(){
-        	$("#iframe").attr('src', paratapSite);
+        	$("#iframe").attr({
+        	  'src': paratapSite,
+        	  'height': 350,
+        	  'width': 750
+        	});
         });
         
         $("#trigger").click(function(){

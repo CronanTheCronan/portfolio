@@ -1,0 +1,106 @@
+<footer>
+		<!-- Back to top
+		fun logos -->
+	</footer>
+	<script>
+	    var yelpCampSite = "https://matt-cronan.herokuapp.com/";
+        var rgbSite = "https://www.espn.com/";
+        var recipeSite = "https://stackoverflow.com";
+        var paratapSite = "https://reddit.com/r/politics";
+        var yelpCampDisp = "<p>Test</p><p>Test2</p>";
+        var rgbDisp = "<p>RGB</p><p>Another RGB para</p>";
+        // var canvas = document.getElementById("mycanvas");
+        // var img    = canvas.toDataURL("image/png");
+
+        
+        $("#yelpcampBtn").click(function(){
+          $("#iframe").attr('src', yelpCampSite);
+        	$("#projectInfo").html(yelpCampDisp);
+        });
+        
+        $("#rgbBtn").click(function(){
+            $("#iframe").attr('src', rgbSite);
+            $("#projectInfo").html(rgbDisp);
+        });
+        
+        $("#recipeBtn").click(function(){
+        	$("#iframe").attr('src', recipeSite);
+        	$("#projectInfo").html(yelpCampDisp);
+        });
+        
+        $("#paratapBtn").click(function(){
+        	$("#iframe").attr('src', paratapSite);
+        	$("#projectInfo").html(yelpCampDisp);
+        });
+        
+        $("#trigger").click(function(){
+            $('.hiddenCanvas').addClass('shownCanvas').removeClass('hiddenCanvas');
+            $('.hiddenP').addClass('shownP').removeClass('hiddenP');
+        });
+        
+        $('#triggerClose').click(function(){
+          $('.shownCanvas').addClass('hiddenCanvas').removeClass('shownCanvas');
+          $('.shownP').addClass('hiddenP').removeClass('shownP');
+        });
+        
+        // $("#printResume").click(function(){ print_resume(); });
+        
+        // If absolute URL from the remote server is provided, configure the CORS
+        // header on that server.
+        var url = '/assets/CronanResume.pdf';
+        
+        // Disable workers to avoid yet another cross-origin issue (workers need
+        // the URL of the script to be loaded, and dynamically loading a cross-origin
+        // script does not work).
+        // PDFJS.disableWorker = true;
+        
+        // The workerSrc property shall be specified.
+        PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+        
+        // Asynchronous download of PDF
+        var loadingTask = PDFJS.getDocument(url);
+        loadingTask.promise.then(function(pdf) {
+          console.log('PDF loaded');
+          
+          // Fetch the first page
+          var pageNumber = 1;
+          pdf.getPage(pageNumber).then(function(page) {
+            console.log('Page loaded');
+            
+            var scale = 1.5;
+            var viewport = page.getViewport(scale);
+        
+            // Prepare canvas using PDF page dimensions
+            var canvas = document.getElementById('the-canvas');
+            var context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+        
+            // Render PDF page into canvas context
+            var renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+            var renderTask = page.render(renderContext);
+            renderTask.then(function () {
+              console.log('Page rendered');
+            });
+          });
+        }, function (reason) {
+          // PDF loading error
+          console.error(reason);
+      });
+      
+    //   function print_resume(documentId) {
+    //     var doc = document.querySelector('#pdfDocument');
+    
+    //     //Wait until PDF is ready to print    
+    //     if (typeof doc.print === 'undefined') {    
+    //         setTimeout(function(){printDocument(documentId);}, 1000);
+    //     } else {
+    //         doc.print();
+    //     }
+    // }
+	</script>
+</body>
+</html>

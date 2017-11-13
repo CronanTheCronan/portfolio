@@ -1,0 +1,67 @@
+<% include partials/header %>
+
+	<nav>
+		<div class="navbar">
+			<ul>
+				<li><span><i class="fa fa-code" aria-hidden="true"></i></span>&nbsp;Portfolio</li>
+			</ul>
+			<ul class="navbar-links">
+				<li>Projects</li>
+				<li><a href="#" id="trigger">Resume</a></li>
+				<li>About</li>
+			</ul>
+		</div>
+	</nav>
+	<section>
+		<div id="resumePs">
+			<a class="hiddenP" href="#" onclick="window.open('assets/CronanResume.pdf', '_blank', 'fullscreen=yes'); return false;">Print</a>
+			<p id="triggerClose" class="hiddenP">Close</p>
+		</div>
+		<div class="resume">
+			<canvas id="the-canvas" class="hiddenCanvas"></canvas>
+		</div>
+	</section>
+	<section class="header">
+		<div class="hero">
+			<div class="hero-container">
+				<div>
+					<div>
+						<h1>Matt Cronan</h1>
+					</div>
+					<div>
+						<h3>Web Developer</h3>
+					</div>
+				</div>
+				<div class="hero-inner-container">
+					<h4><span>mobile: </span>615.293.8285</h4>
+					<h4><span>email: </span><a href="mailto:mattcronan.webdev@gmail.com">mattcronan.webdev@gmail.com</a></h4>
+					<h4><span>GitHub: </span><a href="https://github.com/CronanTheCronan/">https://github.com/CronanTheCronan</a></h4>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="projectSection">
+		<div container="iframe-container">
+			<div>
+				<h2>Projects</h2>
+				<hr>
+				<div class="project-buttons">
+					<div class="projects-buttons-inner">
+						<div id="yelpcampBtn" class="projectbtn">YelpCamp</div>
+						<div id="rgbBtn" class="projectbtn">RGB Guessing Game</div>
+						<div id="recipeBtn" class="projectbtn">Startup Site</div>
+						<div id="paratapBtn" class="projectbtn">Paratap Clone</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<iframe id="iframe"src="https://matt-cronan.herokuapp.com/" align="center" frameborder="1" allowfullscreen="true"></iframe>
+			</div>
+			<div>
+				<p id="projectInfo"></p>
+			</div>
+		</div>
+	</section>
+	
+<% include partials/footer %>
+	
